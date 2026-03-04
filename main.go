@@ -322,23 +322,10 @@ func handleOpenAI(w http.ResponseWriter, r *http.Request) {
 					break
 				}
 			} else {
-				ollamaReq := &api.ChatRequest{
-					Model: req.Model,
-					Options: map[string]any{
-						"temperature": req.Temperature,
-						"top_p":       req.TopP,
-					},
-					Stream: &req.Stream,
-				}
-				for _, m := range req.Messages {
-					content := ""
-					if s, ok := m.Content.(string); ok {
-						content = s
-					}
-					ollamaReq.Messages = append(ollamaReq.Messages, api.Message{
-						Role:    m.Role,
-						Content: content,
-					})
+				ollamaReq, err := openai.FromChatRequest(req)
+				if err != nil {
+					log.Printf("[%s] ❌ Conversion Error: %v", reqID, err)
+					break
 				}
 
 				success, retry := callUpstream(pid, key, ollamaReq, w, "openai", reqID)
