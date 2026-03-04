@@ -169,6 +169,19 @@ go-proxy/
 └── README.md              # Este arquivo
 ```
 
+## 📜 Créditos e Atribuições
+
+Este projeto utiliza e adapta partes do código do projeto **[Ollama](https://github.com/ollama/ollama)**, desenvolvido por [Ollama](https://ollama.com).
+
+### Código Adaptado
+
+| Origem | Diretório Original | Licença | Descrição |
+|--------|-------------------|---------|-----------|
+| Ollama | [`anthropic/`](https://github.com/ollama/ollama/tree/main/anthropic) | [MIT](https://github.com/ollama/ollama/blob/main/LICENSE) | Implementação de compatibilidade com a API Anthropic/Claude |
+| Ollama | [`openai/`](https://github.com/ollama/ollama/tree/main/openai) | [MIT](https://github.com/ollama/ollama/blob/main/LICENSE) | Implementação de compatibilidade com a API OpenAI |
+
+### Aviso de Licença
+
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias, correções de bugs ou novas funcionalidades.
